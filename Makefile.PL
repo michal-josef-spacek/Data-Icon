@@ -26,6 +26,8 @@ requires 'Mo::utils::URI' => 0.02;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Data-Icon/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/Data-Icon';
 resources 'repository' => 'git://github.com/michal-josef-spacek/Data-Icon';
+test_requires 'English' => 0;
+test_requires 'Error::Pure::Utils' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
 tests_recursive;

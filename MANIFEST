@@ -21,5 +21,6 @@ META.yml
 README
 t/Data-Icon/01-use.t
 t/Data-Icon/02-version.t
+t/Data-Icon/03-new.t
 xt/Data-Icon/01-pod_coverage.t
 xt/Data-Icon/02-pod.t
