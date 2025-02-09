@@ -62,7 +62,7 @@ sub BUILD {
 		if (defined $self->{'color'}) {
 			err "Parameter 'url' don't need parameter 'color'.";
 		}
-		if (defined $self->{'bg+color'}) {
+		if (defined $self->{'bg_color'}) {
 			err "Parameter 'url' don't need parameter 'bg_color'.";
 		}
 	}
