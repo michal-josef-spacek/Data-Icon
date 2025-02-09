@@ -1,0 +1,108 @@
+NAME
+    Data::Icon - Data object for icon.
+
+SYNOPSIS
+     use Data::Icon;
+
+     my $obj = Data::Icon->new(%params);
+     my $alt = $obj->alt;
+     my $char = $obj->char;
+     my $url = $obj->url;
+
+METHODS
+  "new"
+     my $obj = Data::Icon->new(%params);
+
+    Constructor.
+
+    *       "alt"
+
+            Alternate text for image icon.
+
+            It's optional.
+
+    *       "char"
+
+            Icon character. Could be UTF-8 character. Only one character.
+
+            It's optional.
+
+    *       "url"
+
+            Icon URL.
+
+            It's optional.
+
+    Returns instance of object.
+
+  "alt"
+     my $alt = $obj->alt;
+
+    Get alternate text for image icon.
+
+    Returns string.
+
+  "char"
+     my $char = $obj->char;
+
+    Get icon character.
+
+    Returns string.
+
+  "url"
+     my $url = $obj->url;
+
+    Get icon URL.
+
+    Returns string.
+
+ERRORS
+     new():
+             Parameter 'char' don't need parameter 'alt'.
+             Parameter 'url' is in conflict with parameter 'char'.
+             From Mo::utils:
+                     Parameter 'alt' has length greater than '100'.
+                             Value: %s
+                     Parameter 'char' has length greater than '1'.
+                             Value: %s
+             From Mo::utils::URI::check_location():
+                     Parameter 'url' doesn't contain valid location.
+                             Value: %s
+
+EXAMPLE
+     use strict;
+     use warnings;
+
+     use Data::Icon;
+
+     my $obj = Data::InfoBox::Item->new(
+             'alt' => 'Foo icon',
+             'url' => 'https://example.com/foo.png',
+     );
+
+     # Print out.
+     print "Alternate text: ".$obj->alt."\n";
+     print "Icon URL: ".$obj->url."\n";
+
+     # Output:
+     # TODO
+
+DEPENDENCIES
+    Error::Pure, Mo, Mo::utils, Mo::utils::URI.
+
+REPOSITORY
+    <https://github.com/michal-josef-spacek/Data-Icon>
+
+AUTHOR
+    Michal Josef Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    © 2025 Michal Josef Špaček
+
+    BSD 2-Clause License
+
+VERSION
+    0.01
+
