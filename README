@@ -91,13 +91,13 @@ ERRORS
                      Parameter 'url' doesn't contain valid location.
                              Value: %s
 
-EXAMPLE
+EXAMPLE1
      use strict;
      use warnings;
 
      use Data::Icon;
 
-     my $obj = Data::InfoBox::Item->new(
+     my $obj = Data::Icon->new(
              'alt' => 'Foo icon',
              'url' => 'https://example.com/foo.png',
      );
@@ -107,7 +107,28 @@ EXAMPLE
      print "Icon URL: ".$obj->url."\n";
 
      # Output:
-     # TODO
+     # Alternate text: Foo icon
+     # Icon URL: https://example.com/foo.png
+
+EXAMPLE2
+     use strict;
+     use warnings;
+
+     use Data::Icon;
+     use Unicode::UTF8 qw(decode_utf8 encode_utf8);
+
+     my $obj = Data::Icon->new(
+             'char' => decode_utf8('†'),
+             'color' => 'red',
+     );
+
+     # Print out.
+     print "Character: ".encode_utf8($obj->char)."\n";
+     print "CSS Color: ".$obj->color."\n";
+
+     # Output:
+     # Character: †
+     # CSS Color: red
 
 DEPENDENCIES
     Error::Pure, Mo, Mo::utils, Mo::utils::CSS, Mo::utils::URI.

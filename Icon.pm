@@ -172,16 +172,16 @@ Returns string.
                  Parameter 'url' doesn't contain valid location.
                          Value: %s
 
-=head1 EXAMPLE
+=head1 EXAMPLE1
 
-=for comment filename=create_icon_object_and_print.pl
+=for comment filename=create_image_icon_and_print.pl
 
  use strict;
  use warnings;
 
  use Data::Icon;
 
- my $obj = Data::InfoBox::Item->new(
+ my $obj = Data::Icon->new(
          'alt' => 'Foo icon',
          'url' => 'https://example.com/foo.png',
  );
@@ -191,7 +191,31 @@ Returns string.
  print "Icon URL: ".$obj->url."\n";
 
  # Output:
- # TODO
+ # Alternate text: Foo icon
+ # Icon URL: https://example.com/foo.png
+
+=head1 EXAMPLE2
+
+=for comment filename=create_char_icon_and_print.pl
+
+ use strict;
+ use warnings;
+
+ use Data::Icon;
+ use Unicode::UTF8 qw(decode_utf8 encode_utf8);
+
+ my $obj = Data::Icon->new(
+         'char' => decode_utf8('†'),
+         'color' => 'red',
+ );
+
+ # Print out.
+ print "Character: ".encode_utf8($obj->char)."\n";
+ print "CSS Color: ".$obj->color."\n";
+
+ # Output:
+ # Character: †
+ # CSS Color: red
 
 =head1 DEPENDENCIES
 
