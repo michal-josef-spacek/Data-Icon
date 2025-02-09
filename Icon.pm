@@ -15,6 +15,10 @@ has alt => (
 	is => 'ro',
 );
 
+has bg_color => (
+	is => 'ro',
+);
+
 has char => (
 	is => 'ro',
 );
@@ -32,6 +36,9 @@ sub BUILD {
 
 	# Check alt.
 	check_length($self, 'alt', 100);
+
+	# Check bg_color.
+	check_css_color($self, 'bg_color');
 
 	# Check char.
 	check_length($self, 'char', 1);
@@ -51,8 +58,13 @@ sub BUILD {
 		err "Parameter 'char' don't need parameter 'alt'.";
 	}
 
-	if (defined $self->{'url'} && defined $self->{'color'}) {
-		err "Parameter 'url' don't need parameter 'color'.";
+	if (defined $self->{'url'}) {
+		if (defined $self->{'color'}) {
+			err "Parameter 'url' don't need parameter 'color'.";
+		}
+		if (defined $self->{'bg+color'}) {
+			err "Parameter 'url' don't need parameter 'bg_color'.";
+		}
 	}
 
 	return;
@@ -81,6 +93,7 @@ text or as UTF-8 character with colors.
 
  my $obj = Data::Icon->new(%params);
  my $alt = $obj->alt;
+ my $bg_color = $obj->bg_color;
  my $char = $obj->char;
  my $color = $obj->color;
  my $url = $obj->url;
@@ -98,6 +111,12 @@ Constructor.
 =item * C<alt>
 
 Alternate text for image icon.
+
+It's optional.
+
+=item * C<bg_color>
+
+Background color for UTF-8 character.
 
 It's optional.
 
@@ -131,6 +150,14 @@ Get alternate text for image icon.
 
 Returns string.
 
+=head2 C<bg_color>
+
+ my $bg_color = $obj->bg_color;
+
+Get background color for UTF-8 character.
+
+Returns string.
+
 =head2 C<char>
 
  my $char = $obj->char;
@@ -159,6 +186,7 @@ Returns string.
 
  new():
          Parameter 'char' don't need parameter 'alt'.
+         Parameter 'url' don't need parameter 'bg_color'.
          Parameter 'url' don't need parameter 'color'.
          Parameter 'url' is in conflict with parameter 'char'.
          From Mo::utils:
@@ -210,17 +238,20 @@ Returns string.
  use Unicode::UTF8 qw(decode_utf8 encode_utf8);
 
  my $obj = Data::Icon->new(
+         'bg_color' => 'grey',
          'char' => decode_utf8('†'),
          'color' => 'red',
  );
 
  # Print out.
  print "Character: ".encode_utf8($obj->char)."\n";
- print "CSS Color: ".$obj->color."\n";
+ print "CSS color: ".$obj->color."\n";
+ print "CSS background color: ".$obj->bg_color."\n";
 
  # Output:
  # Character: †
- # CSS Color: red
+ # CSS color: red
+ # CSS background color: grey
 
 =head1 DEPENDENCIES
 

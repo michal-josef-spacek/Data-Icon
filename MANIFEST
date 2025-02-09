@@ -24,8 +24,9 @@ t/Data-Icon/01-use.t
 t/Data-Icon/02-version.t
 t/Data-Icon/03-new.t
 t/Data-Icon/04-alt.t
-t/Data-Icon/05-char.t
-t/Data-Icon/06-color.t
-t/Data-Icon/07-url.t
+t/Data-Icon/05-bg_color.t
+t/Data-Icon/06-char.t
+t/Data-Icon/07-color.t
+t/Data-Icon/08-url.t
 xt/Data-Icon/01-pod_coverage.t
 xt/Data-Icon/02-pod.t

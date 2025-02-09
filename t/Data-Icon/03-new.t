@@ -21,6 +21,7 @@ isa_ok($obj, 'Data::Icon');
 
 # Test.
 $obj = Data::Icon->new(
+	'bg_color' => 'grey',
 	'char' => decode_utf8('†'),
 	'color' => 'red',
 );
