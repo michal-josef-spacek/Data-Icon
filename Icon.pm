@@ -6,6 +6,7 @@ use warnings;
 use Error::Pure qw(err);
 use Mo qw(build is);
 use Mo::utils 0.05 qw(check_length);
+use Mo::utils::CSS 0.03 qw(check_css_color);
 use Mo::utils::URI 0.02 qw(check_location);
 
 our $VERSION = 0.01;
@@ -15,6 +16,10 @@ has alt => (
 );
 
 has char => (
+	is => 'ro',
+);
+
+has color => (
 	is => 'ro',
 );
 
@@ -31,6 +36,9 @@ sub BUILD {
 	# Check char.
 	check_length($self, 'char', 1);
 
+	# Check color.
+	check_css_color($self, 'color');
+
 	# Check url.
 	check_location($self, 'url');
 	# TODO Check image
@@ -41,6 +49,10 @@ sub BUILD {
 
 	if (defined $self->{'char'} && defined $self->{'alt'}) {
 		err "Parameter 'char' don't need parameter 'alt'.";
+	}
+
+	if (defined $self->{'url'} && defined $self->{'color'}) {
+		err "Parameter 'url' don't need parameter 'color'.";
 	}
 
 	return;
@@ -65,6 +77,7 @@ Data::Icon - Data object for icon.
  my $obj = Data::Icon->new(%params);
  my $alt = $obj->alt;
  my $char = $obj->char;
+ my $color = $obj->color;
  my $url = $obj->url;
 
 =head1 METHODS
@@ -86,6 +99,12 @@ It's optional.
 =item * C<char>
 
 Icon character. Could be UTF-8 character. Only one character.
+
+It's optional.
+
+=item * C<color>
+
+Character color.
 
 It's optional.
 
@@ -115,6 +134,14 @@ Get icon character.
 
 Returns string.
 
+=head2 C<color>
+
+ my $color = $obj->color;
+
+Get character color.
+
+Returns CSS color string.
+
 =head2 C<url>
 
  my $url = $obj->url;
@@ -127,11 +154,19 @@ Returns string.
 
  new():
          Parameter 'char' don't need parameter 'alt'.
+         Parameter 'url' don't need parameter 'color'.
          Parameter 'url' is in conflict with parameter 'char'.
          From Mo::utils:
                  Parameter 'alt' has length greater than '100'.
                          Value: %s
                  Parameter 'char' has length greater than '1'.
+                         Value: %s
+         From Mo::utils::CSS::check_css_color():
+                 Parameter '%s' has bad color name.
+                         Value: %s
+                 Parameter '%s' has bad rgb color (bad hex number).
+                         Value: %s
+                 Parameter '%s' has bad rgb color (bad length).
                          Value: %s
          From Mo::utils::URI::check_location():
                  Parameter 'url' doesn't contain valid location.
@@ -163,6 +198,7 @@ Returns string.
 L<Error::Pure>,
 L<Mo>,
 L<Mo::utils>,
+L<Mo::utils::CSS>,
 L<Mo::utils::URI>.
 
 =head1 REPOSITORY

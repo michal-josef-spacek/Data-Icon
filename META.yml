@@ -25,6 +25,7 @@ requires:
   Error::Pure: 0
   Mo: 0
   Mo::utils: 0.05
+  Mo::utils::CSS: 0.03
   Mo::utils::URI: 0.02
   perl: 5.8.0
 resources:

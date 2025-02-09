@@ -7,6 +7,7 @@ SYNOPSIS
      my $obj = Data::Icon->new(%params);
      my $alt = $obj->alt;
      my $char = $obj->char;
+     my $color = $obj->color;
      my $url = $obj->url;
 
 METHODS
@@ -24,6 +25,12 @@ METHODS
     *       "char"
 
             Icon character. Could be UTF-8 character. Only one character.
+
+            It's optional.
+
+    *       "color"
+
+            Character color.
 
             It's optional.
 
@@ -49,6 +56,13 @@ METHODS
 
     Returns string.
 
+  "color"
+     my $color = $obj->color;
+
+    Get character color.
+
+    Returns CSS color string.
+
   "url"
      my $url = $obj->url;
 
@@ -59,11 +73,19 @@ METHODS
 ERRORS
      new():
              Parameter 'char' don't need parameter 'alt'.
+             Parameter 'url' don't need parameter 'color'.
              Parameter 'url' is in conflict with parameter 'char'.
              From Mo::utils:
                      Parameter 'alt' has length greater than '100'.
                              Value: %s
                      Parameter 'char' has length greater than '1'.
+                             Value: %s
+             From Mo::utils::CSS::check_css_color():
+                     Parameter '%s' has bad color name.
+                             Value: %s
+                     Parameter '%s' has bad rgb color (bad hex number).
+                             Value: %s
+                     Parameter '%s' has bad rgb color (bad length).
                              Value: %s
              From Mo::utils::URI::check_location():
                      Parameter 'url' doesn't contain valid location.
@@ -88,7 +110,7 @@ EXAMPLE
      # TODO
 
 DEPENDENCIES
-    Error::Pure, Mo, Mo::utils, Mo::utils::URI.
+    Error::Pure, Mo, Mo::utils, Mo::utils::CSS, Mo::utils::URI.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Data-Icon>

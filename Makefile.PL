@@ -21,6 +21,7 @@ recursive_author_tests('xt');
 requires 'Error::Pure' => 0;
 requires 'Mo' => 0;
 requires 'Mo::utils' => 0.05;
+requires 'Mo::utils::CSS' => 0.03;
 requires 'Mo::utils::URI' => 0.02;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Data-Icon/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/Data-Icon';
