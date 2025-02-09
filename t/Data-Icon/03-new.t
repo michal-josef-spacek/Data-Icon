@@ -4,11 +4,26 @@ use warnings;
 use Data::Icon;
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
+use Unicode::UTF8 qw(decode_utf8);
 
 # Test.
 my $obj = Data::Icon->new;
+isa_ok($obj, 'Data::Icon');
+
+# Test.
+$obj = Data::Icon->new(
+	'alt' => 'Foo icon',
+	'url' => 'https://examples.com/foo.ico',
+);
+isa_ok($obj, 'Data::Icon');
+
+# Test.
+$obj = Data::Icon->new(
+	'char' => decode_utf8('†'),
+	'color' => 'red',
+);
 isa_ok($obj, 'Data::Icon');
 
 # Test.
