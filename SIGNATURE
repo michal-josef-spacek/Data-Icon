@@ -1,0 +1,60 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.88.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: RIPEMD160
+
+SHA256 6c0ff66bdcc803d8fdecf5b3fb58ba194b3d6cff12de3f6f0b329b7f96ca5096 CONCEPT
+SHA256 56bbea0fad187ef3c8a5e591d41579c2f60e30792602db0163131a26371de746 Changes
+SHA256 83dfdd61bbf5d41ca4d6ee76ca0c781203150df723810529453550e42993b031 Icon.pm
+SHA256 553db1b292757f331d25abe52bd1b57c9deb4e4e9e2512fa4e9972c7b0f6a85f LICENSE
+SHA256 531078df3057e03455fed3a856f683d5890e2f32f622c8661361658d5c280bac MANIFEST
+SHA256 32ff07ca76f41f7178a81caa8344f1d6ad7ea0d12f7da0b5e4e2960062f31458 META.yml
+SHA256 6fda4418011ccdfdf2035a657723ff1e40b4d13570b9cd3d65fe154da58b22a4 Makefile.PL
+SHA256 ff6675ad563897799c61afd342cdfd7ca12590ddb38b35d7389e1a2f949cafee README
+SHA256 d1431a6e6d18d150620fbd75706e0652e43134b29f5ce16a0461e66c898d0e41 examples/create_char_icon_and_print.pl
+SHA256 fab3830ef5d1a1dce4bf045cd9d1b574eda30cc3f9c26b70a66e785a81b8b4c4 examples/create_image_icon_and_print.pl
+SHA256 cd5397bbe618f5bbd4e12a33b0cf5d21114e771c2dbd0ce28e2135beb52c35a8 inc/Module/Install.pm
+SHA256 8bd506c33fb78f10f6451413e931ca23541fcc4eebe05fcb7c7c9577341223c4 inc/Module/Install/AuthorRequires.pm
+SHA256 1b5430a46a35142ef8914d8c745196fca825defc9dfa7e389299bf294613825e inc/Module/Install/AuthorTests.pm
+SHA256 798836f9ccb8d204b1be31fc3835631f57e9d818b21a8f0d14bfcfb82ff4a72a inc/Module/Install/Base.pm
+SHA256 d64cd4c16f83c5baf11f64a44bea3a0abc060a49da5aba040f0eb01394bf75ab inc/Module/Install/Can.pm
+SHA256 65d7a6098bf3f829e8c1c2865476d3537aa6f0ad0ffc9149e10812c856529043 inc/Module/Install/Fetch.pm
+SHA256 70c4b77acab3ff51dfb318110369607cb109e1c319459249623b787cf3859750 inc/Module/Install/Makefile.pm
+SHA256 14556386168007ce913e669fc08a332ccdb6140246fd55a90c879b5190c1b57a inc/Module/Install/Metadata.pm
+SHA256 53825bc78e4c910b888160bc148c8bc211be58e02b99c8edcbf4854f95faa049 inc/Module/Install/ReadmeFromPod.pm
+SHA256 4c746c02c5cc19bed4c352e76205b4adff4c45ce8310d71294e1b83c059659c2 inc/Module/Install/Win32.pm
+SHA256 d3d9b4583243c470ae895defa4c44564485b53693cba1c50ab0320768f443e97 inc/Module/Install/WriteAll.pm
+SHA256 119cea4cfef4e000a63b1c0b46e46785614eed5786763fe2a57c7255c74c79d1 t/Data-Icon/01-use.t
+SHA256 24cb94056dcc9e181e76817883a0aeecf835eeb631f4c83dd149e823ccd9b2b9 t/Data-Icon/02-version.t
+SHA256 623f3dace1cb9b9f4d2f09fd13c4cea6c0405f1b0ff0979dd01878753bc724d9 t/Data-Icon/03-new.t
+SHA256 d9371f7b5d9757fb9ae2b4a9e5d25953a45d1047b2e50c63508f95ecc5c1ba44 t/Data-Icon/04-alt.t
+SHA256 ed3ae95efd4fdaf5dc28214619637470d35a7d829afc4be66ee5db20cd03ae02 t/Data-Icon/05-char.t
+SHA256 c431f8ac20604dffb9aec057205d28506b36e588c3123adff3fe52dc2529f3d5 t/Data-Icon/06-color.t
+SHA256 dc297aec5ac30859c1e401e574c46798ca884d6850789a65cc213788316d52f6 t/Data-Icon/07-url.t
+SHA256 db7a0d0ace040487e0ee4c64b2fd9029f193453c1e07ffd181f5e7859445cf23 xt/Data-Icon/01-pod_coverage.t
+SHA256 1fe8458e8810f1597b5a28c6025fa3ca5eeb5c696b7cbc4ac17b525d4340b81b xt/Data-Icon/02-pod.t
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBAwAdFiEE7CqvgROezncwcOKionze/HtIOPAFAmeovZ0ACgkQonze/HtI
+OPAc4QwA0j2Qh/yK3f46JKkmh4oHmKT6D5hvpQanCCiJGkwaY/Bqm7l/hzmbF1aX
+PaSHUyO7LO1c5lkjwUcwoUWpvU3yaAKekBG1WBkvrAr/UWB/b3M0vkgBQSIlcFwY
+QEZBMv0YmAoqxsxmz7Sq+h8mTyZKEVoN19wZVnGchZ8P15lvxQHvT6+FZ95dj2aZ
+CMqri0n8LFIgUzRIeyqReupfTDx4EdMn3ikWI9eqfgDGBZX3QkCW22In6xJaWKef
+djEnFj57PYnIvOuYCBCJhgM6vFhENjCPgOcVMlGQ7EgynesTfbZLs97Kr+PMSRxm
+WNb5pSfu6h/AqReZqNX9D8dT8VXqycFR5i1qqgR5mR5+LMZUKzh0JJ7xKo89uz8y
+OtaQ6R/Q3OXwzI08IxA3hMMCHDzZEXxfDOOsj/TCGt82gSgM2ACfj1mVawa9trMG
+CrOxoPTJEB7n3dJkkIQic7WkEzwhCN1DqoNw1hP0P6zuI56QVJR6lWmxvsNIYY+8
+j6VsIYPe
+=HsAT
+-----END PGP SIGNATURE-----
