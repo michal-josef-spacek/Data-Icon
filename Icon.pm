@@ -70,6 +70,11 @@ __END__
 
 Data::Icon - Data object for icon.
 
+=head1 DESCRIPTION
+
+Data object for description of icon. It could be defined as URL with alternate
+text or as UTF-8 character with colors.
+
 =head1 SYNOPSIS
 
  use Data::Icon;

@@ -1,6 +1,10 @@
 NAME
     Data::Icon - Data object for icon.
 
+DESCRIPTION
+    Data object for description of icon. It could be defined as URL with
+    alternate text or as UTF-8 character with colors.
+
 SYNOPSIS
      use Data::Icon;
 
